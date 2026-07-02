@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ScrollReveal } from "./ScrollReveal";
-import { benefits, timeline, storyHighlights } from "./data";
+import { benefits } from "./data";
 
 export function AboutUs() {
   const bgImages = [
@@ -47,7 +47,7 @@ export function AboutUs() {
           </div>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 mb-20">
           {benefits.map((s, i) => (
             <ScrollReveal key={s.num} delay={i * 150}>
               <div className="text-center group">
@@ -68,37 +68,43 @@ export function AboutUs() {
               <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">Our heritage of excellence</h3>
             </div>
           </ScrollReveal>
-          <div className="relative">
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-primary/20" />
-            <div className="space-y-8">
-              {timeline.map((item, i) => (
-                <ScrollReveal key={i} delay={i * 120}>
-                  <div className="relative md:grid md:grid-cols-2 md:gap-12">
-                    <div className={`md:text-right ${i % 2 === 0 ? "md:order-1" : "md:order-2"}`}>
-                      <span className="text-sm font-semibold text-primary">{item.year}</span>
-                      <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{item.text}</p>
-                    </div>
-                    <div className={`hidden md:flex items-center ${i % 2 === 0 ? "md:order-2 md:justify-start" : "md:order-1 md:justify-end"}`}>
-                      <div className="w-3 h-3 rounded-full bg-primary shadow-md shadow-primary/30" />
-                    </div>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
 
-            {/* Learn More link */}
-            <ScrollReveal>
-              <div className="text-center mt-10">
-                <Link
-                  href="/aboutfull"
-                  className="inline-flex items-center gap-2 rounded-xl bg-primary/10 text-primary px-6 py-3 text-sm font-semibold hover:bg-primary/20 transition-colors"
-                >
-                  Learn More
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                </Link>
-              </div>
-            </ScrollReveal>
+          <div className="max-w-3xl mx-auto">
+            <p className="text-gray-700 leading-7 mb-6">
+              PT Pindad (Persero) is Indonesia's state-owned defense manufacturer,
+              with a history spanning more than two centuries. Its origins date back
+              to <strong>1808</strong>, when the Dutch colonial government established
+              a military workshop called <strong>Constructie Winkel</strong> to repair
+              and manufacture military equipment.
+            </p>
+
+            <p className="text-gray-700 leading-7 mb-6">
+              In the early 20th century, the facility was relocated to
+              <strong> Bandung</strong>, where it expanded its production capabilities.
+              During the Japanese occupation of Indonesia between 1942 and 1945, the
+              factory continued operating under a different administration.
+            </p>
+
+            <p className="text-gray-700 leading-7 mb-6">
+              Following Indonesia's independence, the factory was transferred to the
+              Indonesian government in <strong>1950</strong> and became
+              <strong> Pabrik Senjata dan Mesiu (PSM)</strong>, focusing on producing
+              weapons and ammunition for the nation's armed forces.
+            </p>
           </div>
+
+          {/* Learn More link */}
+          <ScrollReveal>
+            <div className="text-center mt-10">
+              <Link
+                href="/aboutfull"
+                className="inline-flex items-center gap-2 rounded-xl bg-primary/10 text-primary px-6 py-3 text-sm font-semibold hover:bg-primary/20 transition-colors"
+              >
+                Learn More
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
 
       </div>
