@@ -11,8 +11,8 @@ export default function FloatingSupport() {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [position, setPosition] = useState<{ x: number; y: number } | null>(null);
 
+  // Set initial position — always bottom-right
   useEffect(() => {
-    // Set initial position after mount (coordinates known)
     if (buttonRef.current) {
       const padding = 24;
       setPosition({
