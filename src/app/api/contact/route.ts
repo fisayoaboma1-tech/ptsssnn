@@ -35,7 +35,7 @@ export async function POST(request: Request) {
 
     // Send email using Resend
     const data = await resendClient.emails.send({
-      from: "onboarding@resend.dev", // Resend's default sender (works without domain verification)
+      from: "noreply@ptssn.id", // Your verified domain
       to: ["support@ptssn.id"], // Where you want to receive the emails
       replyTo: email, // Reply directly to the person who filled the form
       subject: `New Contact Form Submission - ${reason || "General Inquiry"}`,
