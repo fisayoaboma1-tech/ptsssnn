@@ -34,7 +34,6 @@ export function Header() {
 
           <div className="hidden md:flex items-center gap-8 text-sm">
             <a href="#services" className={`${scrolled ? "text-gray-900 hover:text-gray-700" : "text-white hover:text-white/70"} transition-colors`}>Services</a>
-            <a href="#why-us" className={`${scrolled ? "text-gray-900 hover:text-gray-700" : "text-white hover:text-white/70"} transition-colors`}>Why Us</a>
             <a href="#agency" className={`${scrolled ? "text-gray-900 hover:text-gray-700" : "text-white hover:text-white/70"} transition-colors`}>About</a>
             <a href="#contact" className={`${scrolled ? "text-gray-900 hover:text-gray-700" : "text-white hover:text-white/70"} transition-colors`}>Contact</a>
           </div>
