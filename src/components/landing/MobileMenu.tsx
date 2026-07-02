@@ -113,7 +113,24 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
               { href: "/aboutfull", label: "About", Icon: Info },
               { href: "/contactdetails", label: "Contact", Icon: Headset },
             ].map((item) =>
-              item.href.startsWith("#") ? (
+              item.href === "#services" ? (
+                <a
+                  key={item.href}
+                  href="/#services"
+                  onClick={(e) => {
+                    onClose();
+                    e.preventDefault();
+                    window.location.href = "/#services";
+                    setTimeout(() => {
+                      document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+                    }, 50);
+                  }}
+                  className="flex items-center gap-3 px-6 py-3.5 text-sm text-gray-700 hover:text-gray-900 hover:bg-black/[0.03] transition-colors"
+                >
+                  <item.Icon className="w-4 h-4 text-[#FDAA3E] flex-shrink-0" />
+                  {item.label}
+                </a>
+              ) : item.href.startsWith("#") ? (
                 <a
                   key={item.href}
                   href={item.href}
