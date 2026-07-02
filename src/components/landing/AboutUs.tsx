@@ -70,26 +70,30 @@ export function AboutUs() {
           </ScrollReveal>
 
           <div className="max-w-3xl mx-auto">
-            <p className="text-gray-700 leading-7 mb-6">
-              PT Pindad (Persero) is Indonesia's state-owned defense manufacturer,
-              with a history spanning more than two centuries. Its origins date back
-              to <strong>1808</strong>, when the Dutch colonial government established
-              a military workshop called <strong>Constructie Winkel</strong> to repair
-              and manufacture military equipment.
+            <p className="text-gray-700 leading-8 mb-5">
+              PT Surveyor Indonesia (PTSI) was established on <strong>August 1, 1991</strong>,
+              as a joint venture between the Government of Indonesia, PT SUCOFINDO,
+              and Société Générale de Surveillance (SGS). The company was created to
+              support Indonesia's economic development by providing independent
+              inspection services for imported capital goods and equipment before
+              shipment to Indonesia.
             </p>
 
-            <p className="text-gray-700 leading-7 mb-6">
-              In the early 20th century, the facility was relocated to
-              <strong> Bandung</strong>, where it expanded its production capabilities.
-              During the Japanese occupation of Indonesia between 1942 and 1945, the
-              factory continued operating under a different administration.
+            <p className="text-gray-700 leading-8 mb-5">
+              During its early years, PTSI focused primarily on Pre-Shipment
+              Inspection (PSI), ensuring that imported goods complied with government
+              regulations and international quality standards. This helped facilitate
+              trade while improving transparency and efficiency in Indonesia's import
+              process.
             </p>
 
-            <p className="text-gray-700 leading-7 mb-6">
-              Following Indonesia's independence, the factory was transferred to the
-              Indonesian government in <strong>1950</strong> and became
-              <strong> Pabrik Senjata dan Mesiu (PSM)</strong>, focusing on producing
-              weapons and ammunition for the nation's armed forces.
+            <p className="text-gray-700 leading-8 mb-5">
+              After the completion of the government's PSI program in 1997, the
+              company transformed its business model and expanded into a broader range
+              of Testing, Inspection, Certification, Verification, Auditing, and
+              Consulting services. It diversified its expertise across infrastructure,
+              energy, mining, manufacturing, agriculture, transportation, finance,
+              and public-sector projects.
             </p>
           </div>
 

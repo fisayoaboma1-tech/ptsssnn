@@ -3,11 +3,13 @@ import { ArrowLeft } from "lucide-react";
 import { ScrollReveal } from "./ScrollReveal";
 import { benefits, storyHighlights } from "./data";
 
-export function AboutFull() {
+export default function CompanyHistory() {
   return (
-    <section id="about-full" className="py-16 bg-white relative">
-      <div className="max-w-6xl mx-auto px-5 relative">
+    <section className="py-28 relative bg-white overflow-x-hidden">
+      <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url(/shadow-bg.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.75 }} />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
+      <div className="max-w-6xl mx-auto px-5 relative">
         {/* Back to Home */}
         <div className="mb-8">
           <Link
@@ -23,57 +25,56 @@ export function AboutFull() {
           <div className="text-center mb-16 relative z-10">
             <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">About Us</p>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground" style={{ lineHeight: "1.2" }}>
-              History of PT Pindad
+              History of PT Surveyor Indonesia
             </h2>
           </div>
         </ScrollReveal>
 
         <div className="max-w-4xl mx-auto mb-20">
           <ScrollReveal>
-            <p className="text-gray-700 leading-7 mb-6">
-              PT Pindad (Persero) is Indonesia's state-owned defense manufacturer,
-              with a history spanning more than two centuries. Its origins date back
-              to <strong>1808</strong>, when the Dutch colonial government established
-              a military workshop called <strong>Constructie Winkel</strong> to repair
-              and manufacture military equipment.
+            <p className="text-gray-700 leading-8 mb-5">
+              PT Surveyor Indonesia (PTSI) was established on <strong>August 1, 1991</strong>,
+              as a joint venture between the Government of Indonesia, PT SUCOFINDO,
+              and Société Générale de Surveillance (SGS). The company was created to
+              support Indonesia's economic development by providing independent
+              inspection services for imported capital goods and equipment before
+              shipment to Indonesia.
             </p>
 
-            <p className="text-gray-700 leading-7 mb-6">
-              In the early 20th century, the facility was relocated to
-              <strong> Bandung</strong>, where it expanded its production capabilities.
-              During the Japanese occupation of Indonesia between 1942 and 1945, the
-              factory continued operating under a different administration.
+            <p className="text-gray-700 leading-8 mb-5">
+              During its early years, PTSI focused primarily on Pre-Shipment
+              Inspection (PSI), ensuring that imported goods complied with government
+              regulations and international quality standards. This helped facilitate
+              trade while improving transparency and efficiency in Indonesia's import
+              process.
             </p>
 
-            <p className="text-gray-700 leading-7 mb-6">
-              Following Indonesia's independence, the factory was transferred to the
-              Indonesian government in <strong>1950</strong> and became
-              <strong> Pabrik Senjata dan Mesiu (PSM)</strong>, focusing on producing
-              weapons and ammunition for the nation's armed forces.
+            <p className="text-gray-700 leading-8 mb-5">
+              After the completion of the government's PSI program in 1997, the
+              company transformed its business model and expanded into a broader range
+              of Testing, Inspection, Certification, Verification, Auditing, and
+              Consulting services. It diversified its expertise across infrastructure,
+              energy, mining, manufacturing, agriculture, transportation, finance,
+              and public-sector projects.
             </p>
 
-            <p className="text-gray-700 leading-7 mb-6">
-              In <strong>1962</strong>, the organization was renamed
-              <strong> Perindustrian TNI Angkatan Darat (Pindad)</strong>, serving as
-              the Indonesian Army's primary defense manufacturing facility. Over the
-              following decades, its capabilities expanded beyond firearms to include
-              military vehicles, ammunition, and heavy engineering products.
+            <p className="text-gray-700 leading-8 mb-5">
+              Throughout the following decades, PT Surveyor Indonesia strengthened its
+              position as one of Indonesia's leading assurance companies by investing
+              in technology, professional expertise, laboratory capabilities, and
+              nationwide operations. The company introduced strategic business units,
+              expanded its service portfolio, and adopted international management and
+              quality standards.
             </p>
 
-            <p className="text-gray-700 leading-7 mb-6">
-              The modern company was officially established in
-              <strong> 1983</strong> as <strong>PT Pindad (Persero)</strong>, a
-              state-owned enterprise dedicated to developing Indonesia's domestic
-              defense industry. Since then, Pindad has become one of Southeast Asia's
-              leading defense manufacturers.
-            </p>
-
-            <p className="text-gray-700 leading-7">
-              Today, PT Pindad produces a wide range of products, including assault
-              rifles, ammunition, armored personnel carriers, tactical vehicles, and
-              industrial machinery. The company continues to play a key role in
-              strengthening Indonesia's defense capabilities while supporting national
-              industrial development.
+            <p className="text-gray-700 leading-8">
+              Today, PT Surveyor Indonesia is a state-owned enterprise recognized as
+              one of the country's leading providers of Inspection, Verification,
+              Testing, Certification (IVTC), and compliance services. It serves
+              government institutions, state-owned enterprises, and private companies,
+              helping organizations meet regulatory requirements, improve operational
+              quality, and ensure compliance with both Indonesian and international
+              standards.
             </p>
           </ScrollReveal>
         </div>

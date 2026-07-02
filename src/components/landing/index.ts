@@ -3,7 +3,7 @@ export { Header } from "./Header";
 export { Header2 } from "./Header2";
 export { Services } from "./Services";
 export { AboutUs } from "./AboutUs";
-export { AboutFull } from "./AboutFull";
+export { default as AboutFull } from "./AboutFull";
 export { Contact } from "./ContactCTA";
 export { ContactDirect } from "./ContactDirect";
 export { FinalCTA } from "./FinalCTA";
