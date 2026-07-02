@@ -1,12 +1,32 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Menu } from "lucide-react";
 import { MobileMenu } from "./MobileMenu";
 
 const LOGO_URL = "https://res.cloudinary.com/dahp1ngcc/image/upload/v1782828720/WhatsApp_Image_2026-06-30_at_3.10.04_PM__1_-removebg-preview_x4cpws.png";
 
+function ServicesLink() {
+  return (
+    <a
+      href="/#services"
+      onClick={(e) => {
+        e.preventDefault();
+        window.location.href = "/#services";
+        setTimeout(() => {
+          document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+        }, 50);
+      }}
+      className="text-gray-900 hover:text-gray-700 transition-colors"
+    >
+      Services
+    </a>
+  );
+}
+
 export function Header2() {
+  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -32,7 +52,7 @@ export function Header2() {
           </Link>
 
           <div className="hidden md:flex items-center gap-8 text-sm">
-            <a href="#services" className="text-gray-900 hover:text-gray-700 transition-colors">Services</a>
+            <ServicesLink />
             <Link href="/aboutfull" className="text-gray-900 hover:text-gray-700 transition-colors">About</Link>
             <Link href="/contactdetails" className="text-gray-900 hover:text-gray-700 transition-colors">Contact</Link>
           </div>
@@ -47,7 +67,6 @@ export function Header2() {
         </div>
       </nav>
 
-      {/* Mobile menu overlay - rendered outside nav to avoid z-index stacking context */}
       {menuOpen && <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />}
     </>
   );

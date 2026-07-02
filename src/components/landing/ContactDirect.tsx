@@ -305,7 +305,34 @@ export function ContactDirect() {
           </p>
         </div>
 
-        <form onSubmit={(e) => { e.preventDefault(); console.log(formData); }} className="space-y-5">
+        <form onSubmit={async (e) => {
+          e.preventDefault();
+          try {
+            const response = await fetch("/api/contact", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+              alert("Thank you! Your message has been sent successfully.");
+              setFormData({
+                name: "",
+                email: "",
+                countryCode: "+62",
+                phone: "",
+                reason: "",
+                message: "",
+              });
+            } else {
+              alert("Failed to send message. Please try again.");
+            }
+          } catch (error) {
+            alert("An error occurred. Please try again later.");
+          }
+        }} className="space-y-5">
         <div>
           <label className="block text-sm font-medium mb-1.5">Full Name</label>
           <input
