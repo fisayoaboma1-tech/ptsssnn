@@ -1,40 +1,11 @@
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { ScrollReveal } from "./ScrollReveal";
 import { benefits, storyHighlights } from "./data";
 
 export function AboutFull() {
-  const bgImages = [
-    "https://res.cloudinary.com/dahp1ngcc/image/upload/v1782831713/closeup-working-table-workplace-office_1_iby4tj.jpg",
-    "https://res.cloudinary.com/dahp1ngcc/image/upload/v1782831718/closeup-hands-passing-contract-unrecognizable-businessman_1_vadubj.jpg",
-  ];
-  const [idx, setIdx] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setIdx((i) => (i + 1) % bgImages.length);
-    }, 5000);
-    return () => clearInterval(id);
-  }, [bgImages.length]);
-
   return (
-    <section id="about-full" className="py-16 bg-white border-y border-border/30 relative overflow-hidden">
-      {bgImages.map((src, i) => (
-        <div
-          key={src}
-          className="absolute inset-0 pointer-events-none transition-opacity duration-1000 ease-in-out"
-          style={{
-            backgroundImage: `url(${src})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed',
-            opacity: i === idx ? 0.25 : 0,
-          }}
-        />
-      ))}
-      <div className="absolute inset-0 pointer-events-none bg-black/5" />
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none" />
+    <section id="about-full" className="py-16 bg-white relative">
       <div className="max-w-6xl mx-auto px-5 relative">
 
         {/* Back to Home */}
