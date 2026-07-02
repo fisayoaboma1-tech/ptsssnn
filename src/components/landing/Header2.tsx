@@ -33,8 +33,8 @@ export function Header2() {
 
           <div className="hidden md:flex items-center gap-8 text-sm">
             <a href="#services" className="text-gray-900 hover:text-gray-700 transition-colors">Services</a>
-            <a href="#agency" className="text-gray-900 hover:text-gray-700 transition-colors">About</a>
-            <a href="#contact" className="text-gray-900 hover:text-gray-700 transition-colors">Contact</a>
+            <Link href="/aboutfull" className="text-gray-900 hover:text-gray-700 transition-colors">About</Link>
+            <Link href="/contactdetails" className="text-gray-900 hover:text-gray-700 transition-colors">Contact</Link>
           </div>
 
           <button
