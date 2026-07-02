@@ -1,7 +1,6 @@
 import { ScrollReveal } from "./ScrollReveal";
 import { services } from "./data";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
 export function Services() {
   return (
@@ -41,15 +40,6 @@ export function Services() {
               ))}
             </div>
 
-            <ScrollReveal delay={280}>
-              <Link
-                href="/contactdetails"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors mt-2"
-              >
-                Learn More
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </ScrollReveal>
           </div>
 
           {/* Right: Why businesses choose us */}

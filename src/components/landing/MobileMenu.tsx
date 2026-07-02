@@ -157,7 +157,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
 
             <div className="px-6">
               <Link
-                href="/login"
+                href="/contactdetails"
                 onClick={onClose}
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#FDAA3E] text-[#1a1a1a] px-6 py-3 text-sm font-semibold hover:bg-[#fdb95e] transition-all duration-200 active:scale-[0.97]"
               >
