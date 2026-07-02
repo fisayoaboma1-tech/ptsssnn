@@ -110,17 +110,29 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
               { href: "#services", label: "Services", Icon: Briefcase },
               { href: "/aboutfull", label: "About", Icon: Building2 },
               { href: "#contact", label: "Contact", Icon: MessageCircle },
-            ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={onClose}
-                className="flex items-center gap-3 px-6 py-3.5 text-sm text-gray-700 hover:text-gray-900 hover:bg-black/[0.03] transition-colors"
-              >
-                <item.Icon className="w-4 h-4 text-[#FDAA3E] flex-shrink-0" />
-                {item.label}
-              </Link>
-            ))}
+            ].map((item) =>
+              item.href.startsWith("#") ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={onClose}
+                  className="flex items-center gap-3 px-6 py-3.5 text-sm text-gray-700 hover:text-gray-900 hover:bg-black/[0.03] transition-colors"
+                >
+                  <item.Icon className="w-4 h-4 text-[#FDAA3E] flex-shrink-0" />
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={onClose}
+                  className="flex items-center gap-3 px-6 py-3.5 text-sm text-gray-700 hover:text-gray-900 hover:bg-black/[0.03] transition-colors"
+                >
+                  <item.Icon className="w-4 h-4 text-[#FDAA3E] flex-shrink-0" />
+                  {item.label}
+                </Link>
+              )
+            )}
 
             <div className="border-t border-black/5 my-4 mx-6" />
 
