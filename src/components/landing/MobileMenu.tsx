@@ -38,23 +38,34 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
     return () => document.removeEventListener("keydown", handleKey);
   }, [mounted, closing, onClose]);
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   if (!mounted) return null;
 
   const drawerStyle: React.CSSProperties = closing
     ? { animation: "slideOut 500ms ease-in-out forwards" }
     : { animation: "slideIn 500ms ease-in-out forwards" };
 
-  return (
-    <div className="fixed inset-0 z-50 flex md:hidden" role="dialog" aria-modal="true">
-      {/* Backdrop */}
-      <div
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-        onClick={!closing ? onClose : undefined}
-      />
+   return (
+     <div className="fixed inset-0 z-[9999] flex md:hidden" role="dialog" aria-modal="true">
+       {/* Backdrop */}
+       <div
+         className="absolute inset-0 bg-black/70 backdrop-blur-md"
+         onClick={!closing ? onClose : undefined}
+       />
 
       {/* Drawer */}
       <div
-        className="relative ml-auto w-[320px] max-w-[90vw] h-full bg-white border-l border-gray-200 shadow-2xl flex flex-col"
+        className="relative ml-auto w-[320px] max-w-[90vw] h-full bg-white/95 border-l border-gray-200 shadow-2xl flex flex-col"
         style={drawerStyle}
       >
         {/* Decorative background */}
