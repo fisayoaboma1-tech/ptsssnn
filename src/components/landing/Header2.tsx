@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu } from "lucide-react";
 import { MobileMenu } from "./MobileMenu";
 
@@ -19,16 +20,14 @@ export function Header2() {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 relative overflow-x-hidden ${
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-md shadow-sm"
-          : "bg-white/90 backdrop-blur-md shadow-sm"
+          ? "bg-white/30 backdrop-blur-lg shadow-sm"
+          : "bg-transparent backdrop-blur-none shadow-none"
       }`}>
-        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url(/shadow-bg.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.75 }} />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between relative">
+        <div className="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
-            <img src={LOGO_URL} alt="Solusi SNI" className="h-7 w-auto" />
+            <Image src={LOGO_URL} alt="Solusi SNI" width={28} height={28} className="h-7 w-auto" />
             <span className="text-xl font-semibold text-gray-900 md:tracking-tight md:text-xl md:font-semibold">PT <span className="text-2xl font-bold text-gray-900">SS</span>N</span>
           </Link>
 
@@ -40,7 +39,7 @@ export function Header2() {
 
           <button
             onClick={() => setMenuOpen(true)}
-            className="inline-flex items-center gap-1.5 rounded-xl border border-gray-900/30 bg-white/80 text-gray-900 hover:bg-gray-50 backdrop-blur-sm transition-all duration-200 active:scale-[0.97] px-5 py-2.5 text-sm font-medium"
+            className="inline-flex md:hidden items-center gap-1.5 rounded-xl border border-gray-400 bg-white/10 text-gray-900 hover:bg-white/20 backdrop-blur-sm transition-all duration-200 active:scale-[0.97] px-5 py-2.5 text-sm font-medium"
           >
             Menu
             <Menu className="w-3.5 h-3.5" />

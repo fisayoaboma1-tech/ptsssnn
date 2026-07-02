@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { X, BriefcaseBusiness, Info, Headset, ArrowRight } from "lucide-react";
 
 const LOGO_URL = "https://res.cloudinary.com/dahp1ngcc/image/upload/v1782828720/WhatsApp_Image_2026-06-30_at_3.10.04_PM__1_-removebg-preview_x4cpws.png";
@@ -86,7 +87,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           {/* Header */}
           <div className="flex items-center justify-between px-5 h-16 border-b border-black/5">
             <Link href="/" className="flex items-center gap-2.5" onClick={onClose}>
-              <img src={LOGO_URL} alt="Solusi SNI" className="h-6 w-auto" />
+              <Image src={LOGO_URL} alt="Solusi SNI" width={24} height={24} className="h-6 w-auto" />
               <span className="text-base font-semibold text-gray-800 tracking-tight">
                 PT <span className="text-xl font-bold">SS</span>N
               </span>

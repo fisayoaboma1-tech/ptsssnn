@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu } from "lucide-react";
 import { MobileMenu } from "./MobileMenu";
 
@@ -28,7 +29,7 @@ export function Header() {
       >
         <div className="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
-            <img src={LOGO_URL} alt="Solusi SNI" className="h-7 w-auto" />
+            <Image src={LOGO_URL} alt="Solusi SNI" width={28} height={28} className="h-7 w-auto" />
             <span className={`text-xl font-semibold ${scrolled ? "text-gray-900" : "text-white"} md:tracking-tight md:text-xl md:font-semibold`}>PT <span className={`text-2xl font-bold ${scrolled ? "text-gray-900" : "text-white"}`}>SS</span>N</span>
           </Link>
 
@@ -40,7 +41,7 @@ export function Header() {
 
           <button
             onClick={() => setMenuOpen(true)}
-            className={`inline-flex items-center gap-1.5 rounded-xl border backdrop-blur-sm transition-all duration-200 active:scale-[0.97] px-5 py-2.5 text-sm font-medium ${
+            className={`inline-flex md:hidden items-center gap-1.5 rounded-xl border backdrop-blur-sm transition-all duration-200 active:scale-[0.97] px-5 py-2.5 text-sm font-medium ${
               scrolled
                 ? "border-gray-900/30 bg-white/10 text-gray-900 hover:bg-white/20"
                 : "border-white/30 bg-white/10 text-white hover:bg-white/20"

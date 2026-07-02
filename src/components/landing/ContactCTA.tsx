@@ -2,7 +2,7 @@ import { ScrollReveal } from "./ScrollReveal";
 
 export function Contact() {
   return (
-    <section className="relative overflow-hidden py-0 sm:py-20 overflow-x-hidden" style={{ background: "#050d0a" }}>
+    <section className="relative overflow-hidden py-0 sm:py-20 overflow-x-hidden" style={{ background: "#000000d2" }}>
       <video
         autoPlay
         loop

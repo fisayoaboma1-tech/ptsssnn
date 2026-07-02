@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const LOGO_URL = "https://res.cloudinary.com/dahp1ngcc/image/upload/v1782828720/WhatsApp_Image_2026-06-30_at_3.10.04_PM__1_-removebg-preview_x4cpws.png";
@@ -11,7 +12,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <img src={LOGO_URL} alt="Solusi SNI" className="h-7 w-auto" />
+              <Image src={LOGO_URL} alt="Solusi SNI" width={28} height={28} className="h-7 w-auto" />
               <span className="font-semibold text-foreground text-sm">
                 PT <span className="text-lg font-bold">SS</span>N
               </span>
