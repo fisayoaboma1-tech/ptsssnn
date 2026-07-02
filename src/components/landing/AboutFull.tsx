@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { ScrollReveal } from "./ScrollReveal";
 import { benefits, timeline, storyHighlights } from "./data";
 
@@ -34,6 +36,18 @@ export function AboutFull() {
       <div className="absolute inset-0 pointer-events-none bg-black/5" />
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none" />
       <div className="max-w-6xl mx-auto px-5 relative">
+
+        {/* Back to Home */}
+        <div className="mb-8">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Home
+          </Link>
+        </div>
+
         <ScrollReveal>
           <div className="text-center mb-16 relative z-10">
             <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">About Us</p>

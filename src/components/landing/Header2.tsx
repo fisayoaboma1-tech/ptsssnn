@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { MobileMenu } from "./MobileMenu";
@@ -5,9 +6,24 @@ import { MobileMenu } from "./MobileMenu";
 const LOGO_URL = "https://res.cloudinary.com/dahp1ngcc/image/upload/v1782828720/WhatsApp_Image_2026-06-30_at_3.10.04_PM__1_-removebg-preview_x4cpws.png";
 
 export function Header2() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/90 backdrop-blur-md shadow-sm"
+          : "bg-white/90 backdrop-blur-md shadow-sm"
+      }`}>
         <div className="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
             <img src={LOGO_URL} alt="Solusi SNI" className="h-7 w-auto" />
@@ -21,6 +37,7 @@ export function Header2() {
           </div>
 
           <button
+            onClick={() => setMenuOpen(true)}
             className="inline-flex items-center gap-1.5 rounded-xl border border-gray-900/30 bg-white/80 text-gray-900 hover:bg-gray-50 backdrop-blur-sm transition-all duration-200 active:scale-[0.97] px-5 py-2.5 text-sm font-medium"
           >
             Menu
@@ -30,7 +47,7 @@ export function Header2() {
       </nav>
 
       {/* Mobile menu overlay - rendered outside nav to avoid z-index stacking context */}
-      <MobileMenu open={false} onClose={() => {}} />
+      {menuOpen && <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />}
     </>
   );
 }

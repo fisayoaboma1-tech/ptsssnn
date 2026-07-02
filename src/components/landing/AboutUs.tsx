@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { ScrollReveal } from "./ScrollReveal";
 import { benefits, timeline, storyHighlights } from "./data";
 
@@ -69,8 +70,8 @@ export function AboutUs() {
           </ScrollReveal>
           <div className="relative">
             <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-primary/20" />
-          <div className="space-y-8">
-              {timeline.filter(item => parseInt(item.year) < 1950).map((item, i) => (
+            <div className="space-y-8">
+              {timeline.map((item, i) => (
                 <ScrollReveal key={i} delay={i * 120}>
                   <div className="relative md:grid md:grid-cols-2 md:gap-12">
                     <div className={`md:text-right ${i % 2 === 0 ? "md:order-1" : "md:order-2"}`}>
@@ -81,19 +82,22 @@ export function AboutUs() {
                       <div className="w-3 h-3 rounded-full bg-primary shadow-md shadow-primary/30" />
                     </div>
                   </div>
-                  {item.year === "1942–1945" && (
-                    <ScrollReveal>
-                      <div className="text-center mt-6">
-                        <a href="/aboutfull" className="inline-flex items-center gap-2 rounded-xl bg-primary/10 text-primary px-6 py-3 text-sm font-semibold hover:bg-primary/20 transition-colors">
-                          Learn More
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                        </a>
-                      </div>
-                    </ScrollReveal>
-                  )}
                 </ScrollReveal>
               ))}
             </div>
+
+            {/* Learn More link */}
+            <ScrollReveal>
+              <div className="text-center mt-10">
+                <Link
+                  href="/aboutfull"
+                  className="inline-flex items-center gap-2 rounded-xl bg-primary/10 text-primary px-6 py-3 text-sm font-semibold hover:bg-primary/20 transition-colors"
+                >
+                  Learn More
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </Link>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
 
