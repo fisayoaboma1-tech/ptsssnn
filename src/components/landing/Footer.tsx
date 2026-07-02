@@ -44,10 +44,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="mailto:info@ptssn.co.id" className="flex items-start gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  <Mail className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                  <span>info@ptssn.co.id</span>
-                </Link>
               </li>
               <li>
                 <Link href="mailto:support@ptssn.id" className="flex items-start gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
