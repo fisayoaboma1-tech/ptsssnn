@@ -1,7 +1,14 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+let resend: any = null;
+
+function getResendClient() {
+  if (!resend && process.env.RESEND_API_KEY) {
+    const { Resend } = require("resend");
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resend;
+}
 
 export async function POST(request: Request) {
   try {
@@ -16,8 +23,18 @@ export async function POST(request: Request) {
       );
     }
 
+    const resendClient = getResendClient();
+    
+    if (!resendClient) {
+      console.error("Resend API key not configured");
+      return NextResponse.json(
+        { error: "Email service not configured" },
+        { status: 500 }
+      );
+    }
+
     // Send email using Resend
-    const data = await resend.emails.send({
+    const data = await resendClient.emails.send({
       from: "noreply@ptssn.id", // Your verified domain
       to: ["support@ptssn.id"], // Where you want to receive the emails
       subject: `New Contact Form Submission - ${reason || "General Inquiry"}`,
