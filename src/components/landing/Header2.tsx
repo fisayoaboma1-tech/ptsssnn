@@ -19,12 +19,14 @@ export function Header2() {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 relative overflow-x-hidden ${
         scrolled
           ? "bg-white/90 backdrop-blur-md shadow-sm"
           : "bg-white/90 backdrop-blur-md shadow-sm"
       }`}>
-        <div className="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url(/shadow-bg.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', opacity: 0.75 }} />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between relative">
           <Link href="/" className="flex items-center gap-2.5">
             <img src={LOGO_URL} alt="Solusi SNI" className="h-7 w-auto" />
             <span className="text-xl font-semibold text-gray-900 md:tracking-tight md:text-xl md:font-semibold">PT <span className="text-2xl font-bold text-gray-900">SS</span>N</span>
