@@ -1,0 +1,12 @@
+export { Hero } from "./Hero";
+export { Header } from "./Header";
+export { Header2 } from "./Header2";
+export { Services } from "./Services";
+export { AboutUs } from "./AboutUs";
+export { AboutFull } from "./AboutFull";
+export { Contact } from "./ContactCTA";
+export { ContactDirect } from "./ContactDirect";
+export { Reviews } from "./Reviews";
+export { FinalCTA } from "./FinalCTA";
+export { Footer } from "./Footer";
+export { ScrollReveal } from "./ScrollReveal";
