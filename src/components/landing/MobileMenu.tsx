@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { X, Briefcase, Award, Building2, Users, MessageCircle, ArrowRight } from "lucide-react";
+import { X, BriefcaseBusiness, Info, Headset, ArrowRight } from "lucide-react";
 
 const LOGO_URL = "https://res.cloudinary.com/dahp1ngcc/image/upload/v1782828720/WhatsApp_Image_2026-06-30_at_3.10.04_PM__1_-removebg-preview_x4cpws.png";
 
@@ -107,9 +107,9 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             </p>
 
             {[
-              { href: "#services", label: "Services", Icon: Briefcase },
-              { href: "/aboutfull", label: "About", Icon: Building2 },
-              { href: "/contactdetails", label: "Contact", Icon: MessageCircle },
+              { href: "#services", label: "Services", Icon: BriefcaseBusiness },
+              { href: "/aboutfull", label: "About", Icon: Info },
+              { href: "/contactdetails", label: "Contact", Icon: Headset },
             ].map((item) =>
               item.href.startsWith("#") ? (
                 <a
