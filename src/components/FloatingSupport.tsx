@@ -5,14 +5,14 @@ import Link from "next/link";
 import { Headset } from "lucide-react";
 
 export default function FloatingSupport() {
-  const [position, setPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [isBouncing, setIsBouncing] = useState(true);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const [position, setPosition] = useState<{ x: number; y: number } | null>(null);
 
-  // Position in bottom-right after mount
   useEffect(() => {
+    // Set initial position after mount (coordinates known)
     if (buttonRef.current) {
       const padding = 24;
       setPosition({
@@ -124,17 +124,17 @@ export default function FloatingSupport() {
         ref={buttonRef}
         onMouseDown={handleMouseDown}
         onTouchStart={handleTouchStart}
-        className={`fixed z-50 flex items-center justify-center w-14 h-14 rounded-full shadow-lg cursor-pointer transition-colors duration-200 select-none ${
-          isBouncing ? "animate-support-bounce" : ""
-        }`}
+        className="fixed z-50 flex items-center justify-center w-14 h-14 rounded-full shadow-lg cursor-pointer transition-colors duration-200 select-none"
         style={{
-          left: `${position.x}px`,
-          top: `${position.y}px`,
+          bottom: "24px",
+          right: "24px",
+          left: position ? `${position.x}px` : "auto",
+          top: position ? `${position.y}px` : "auto",
         }}
-          aria-label="Support"
-        >
-          <Headset className="w-6 h-6 text-black pointer-events-none" />
-        </button>
+        aria-label="Support"
+      >
+        <Headset className="w-6 h-6 text-black pointer-events-none" />
+      </button>
     </Link>
   );
 }

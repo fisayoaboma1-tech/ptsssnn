@@ -19,7 +19,7 @@ export function AboutFull() {
   }, [bgImages.length]);
 
   return (
-    <section id="about-full" className="py-28 bg-white border-y border-border/30 relative overflow-hidden">
+    <section id="about-full" className="py-16 bg-white border-y border-border/30 relative overflow-hidden">
       {bgImages.map((src, i) => (
         <div
           key={src}

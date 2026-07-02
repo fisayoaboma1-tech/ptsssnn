@@ -109,7 +109,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             {[
               { href: "#services", label: "Services", Icon: Briefcase },
               { href: "/aboutfull", label: "About", Icon: Building2 },
-              { href: "#contact", label: "Contact", Icon: MessageCircle },
+              { href: "/contactdetails", label: "Contact", Icon: MessageCircle },
             ].map((item) =>
               item.href.startsWith("#") ? (
                 <a
