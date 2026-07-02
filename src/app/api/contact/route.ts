@@ -18,7 +18,7 @@ export async function POST(request: Request) {
 
     // Send email using Resend
     const data = await resend.emails.send({
-      from: "onboarding@resend.dev", // You'll replace this with your verified domain
+      from: "noreply@ptssn.id", // Your verified domain
       to: ["support@ptssn.id"], // Where you want to receive the emails
       subject: `New Contact Form Submission - ${reason || "General Inquiry"}`,
       html: `
