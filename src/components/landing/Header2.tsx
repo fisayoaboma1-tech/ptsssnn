@@ -18,7 +18,6 @@ export function Header2() {
             <a href="#services" className="text-gray-900 hover:text-gray-700 transition-colors">Services</a>
             <a href="#why-us" className="text-gray-900 hover:text-gray-700 transition-colors">Why Us</a>
             <a href="#agency" className="text-gray-900 hover:text-gray-700 transition-colors">About</a>
-            <a href="#reviews" className="text-gray-900 hover:text-gray-700 transition-colors">Clients</a>
             <a href="#contact" className="text-gray-900 hover:text-gray-700 transition-colors">Contact</a>
           </div>
 

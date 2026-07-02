@@ -240,6 +240,11 @@
   50% { box-shadow: 0 0 0 6px transparent; }
 }
 
+@keyframes support-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
 /* ── Animation utilities ── */
 
 .animate-fade-up-blur {
@@ -280,6 +285,10 @@
 
 .animate-subtle-pulse {
   animation: subtle-pulse 2.5s ease-in-out infinite;
+}
+
+.animate-support-bounce {
+  animation: support-bounce 1.8s ease-in-out infinite;
 }
 
 .scroll-revealed {

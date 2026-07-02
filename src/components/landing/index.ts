@@ -6,7 +6,6 @@ export { AboutUs } from "./AboutUs";
 export { AboutFull } from "./AboutFull";
 export { Contact } from "./ContactCTA";
 export { ContactDirect } from "./ContactDirect";
-export { Reviews } from "./Reviews";
 export { FinalCTA } from "./FinalCTA";
 export { Footer } from "./Footer";
 export { ScrollReveal } from "./ScrollReveal";

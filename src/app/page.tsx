@@ -1,6 +1,6 @@
 "use client";
 
-import { Hero, Services, AboutUs, Reviews, Contact, Footer, Header } from "@/components/landing";
+import { Hero, Services, AboutUs, Contact, Footer, Header } from "@/components/landing";
 
 export default function LandingPage() {
   return (
@@ -9,7 +9,6 @@ export default function LandingPage() {
       <Hero />
       <Services />
       <AboutUs />
-      <Reviews />
       <Contact />
       <Footer />
     </div>

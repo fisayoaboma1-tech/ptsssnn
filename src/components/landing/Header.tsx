@@ -36,7 +36,6 @@ export function Header() {
             <a href="#services" className={`${scrolled ? "text-gray-900 hover:text-gray-700" : "text-white hover:text-white/70"} transition-colors`}>Services</a>
             <a href="#why-us" className={`${scrolled ? "text-gray-900 hover:text-gray-700" : "text-white hover:text-white/70"} transition-colors`}>Why Us</a>
             <a href="#agency" className={`${scrolled ? "text-gray-900 hover:text-gray-700" : "text-white hover:text-white/70"} transition-colors`}>About</a>
-            <a href="#reviews" className={`${scrolled ? "text-gray-900 hover:text-gray-700" : "text-white hover:text-white/70"} transition-colors`}>Clients</a>
             <a href="#contact" className={`${scrolled ? "text-gray-900 hover:text-gray-700" : "text-white hover:text-white/70"} transition-colors`}>Contact</a>
           </div>
 
